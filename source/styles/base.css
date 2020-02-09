@@ -199,6 +199,7 @@ main {
     flex: 1 1 auto;
     display: block;
     max-width: 720px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 10px;
 }
