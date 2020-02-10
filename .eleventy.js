@@ -13,11 +13,12 @@ const dir = {
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
 	eleventyConfig.addPassthroughCopy(`${dir.input}/assets`);
+	eleventyConfig.addPassthroughCopy(`./_redirects`);
 	eleventyConfig.addNunjucksFilter("dateToIsoString", dateToIsoString);
 	eleventyConfig.addNunjucksFilter("formatDate", formatDate);
 	eleventyConfig.addNunjucksFilter("sortArticles", sortArticles);
 	return {
 		dir,
-		templateFormats: ['njk', 'md', 'png']
+		templateFormats: ['njk', 'md', 'png', ]
 	}
 }
