@@ -1,0 +1,105 @@
+/* native variant */
+
+.native_checkbox {
+  margin: .889em 0;
+}
+
+.native_checkbox input[type="checkbox"],
+.native_checkbox label{
+  cursor: pointer;
+}
+
+.native_checkbox input[type="checkbox"]:disabled,
+.native_checkbox input[type="checkbox"]:disabled + label {
+  cursor: default;  
+}
+
+
+.native_checkbox input[type="checkbox"]:disabled + label{
+  opacity: .5;
+}
+
+/* custom variant */
+
+.custom_checkbox {
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.custom_checkbox .item {
+  display: flex;
+  align-items: center;
+}
+
+.custom_checkbox .title {
+  padding-left: 6px;
+}
+
+.custom_checkbox .item:hover {
+  cursor: pointer;
+}
+
+.custom_checkbox .item:hover .pseudo_checkbox{
+  border-color: #919191;
+}
+
+  
+.custom_checkbox input[type="checkbox"]{
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.pseudo_checkbox:before {
+  opacity: 0;
+  content: '';
+  top: 1px;
+  left: 1px;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23d31b33' d='M202.624 478.016L0 291.36l70.512-76.56 121.456 111.856L431.44 33.984 512 99.904z'/%3E%3C/svg%3E%0A");
+}
+
+.custom_checkbox input[type="checkbox"]:checked + .pseudo_checkbox:before {
+  opacity: 1;
+  transition: opacity 150ms ease-in;
+}
+
+.custom_checkbox input[type="checkbox"]:focus + .pseudo_checkbox {
+  border-color: #e95265;
+}
+
+.custom_checkbox input[type="checkbox"]:disabled + .pseudo_checkbox, 
+.custom_checkbox input[type="checkbox"]:disabled + .pseudo_checkbox + .title {
+  opacity: .5;
+}
+
+.custom_checkbox input[type="checkbox"]:disabled:checked + .pseudo_checkbox:before {
+  opacity: 0.8;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23acacad' d='M202.624 478.016L0 291.36l70.512-76.56 121.456 111.856L431.44 33.984 512 99.904z'/%3E%3C/svg%3E%0A");
+}
+
+.custom_checkbox input[type="checkbox"]:disabled + label {
+  opacity: .5;
+}
+
+.pseudo_checkbox {
+  position: relative;
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: #fcfcfc;
+  border-radius: 2px;
+  border: 1px solid #acacad;
+  transition: border, 150ms ease-in-out;
+}
+
+
+
+
+
+
+
+
+
