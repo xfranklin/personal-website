@@ -1,29 +1,27 @@
 /* native variant */
 
 .native_checkbox {
-  margin: .889em 0;
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: .889em;
 }
 
-.native_checkbox input[type="checkbox"],
-.native_checkbox label{
+.native_checkbox .item{
   cursor: pointer;
 }
 
 .native_checkbox input[type="checkbox"]:disabled,
-.native_checkbox input[type="checkbox"]:disabled + label {
+.native_checkbox input[type="checkbox"]:disabled + span {
   cursor: default;  
-}
-
-
-.native_checkbox input[type="checkbox"]:disabled + label{
   opacity: .5;
 }
 
 /* custom variant */
 
 .custom_checkbox {
-  /* display: flex;
-  flex-direction: column; */
+  display: inline-flex;
+  flex-direction: column;
+  margin-bottom: .889em;
 }
 
 .custom_checkbox .item {
@@ -39,10 +37,10 @@
   cursor: pointer;
 }
 
-.custom_checkbox .item:hover .pseudo_checkbox{
+ПРОЕБ С ФОКУСОМ НЕ ХВАТАЕТ ВЕСА переписать стили
+/* .custom_checkbox .item:hover input[type="checkbox"]:not(:disabled) + .pseudo_checkbox:not(:disabled){
   border-color: #919191;
-}
-
+} */
   
 .custom_checkbox input[type="checkbox"]{
   width: 1px;
@@ -66,9 +64,6 @@
   transition: opacity 150ms ease-in;
 }
 
-.custom_checkbox input[type="checkbox"]:focus + .pseudo_checkbox {
-  border-color: #e95265;
-}
 
 .custom_checkbox input[type="checkbox"]:disabled + .pseudo_checkbox, 
 .custom_checkbox input[type="checkbox"]:disabled + .pseudo_checkbox + .title {
@@ -95,6 +90,9 @@
   transition: border, 150ms ease-in-out;
 }
 
+.custom_checkbox input[type="checkbox"]:focus + .pseudo_checkbox {
+  border-color: #e95265;
+}
 
 
 
