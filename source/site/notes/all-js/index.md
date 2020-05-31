@@ -1,6 +1,6 @@
 ---
 layout: layouts/article
-title: Весь JavaScript на одной странице (Статья дополняеться)
+title: Весь JavaScript на одной странице (Статья дополняется)
 description: Весь JavaScript на одной странице
 date: 2020-05-31
 tags: notes
