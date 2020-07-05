@@ -1,0 +1,112 @@
+.iterations {
+    font-family: 'Fira mono';
+    margin-bottom: 20px;
+}
+
+.sort-elements {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.first {
+    width: 1px;
+}
+
+.element {
+    margin: 0 2px;
+    transition: transform 150ms linear;
+}
+
+.success .element-label {
+    border-color: #32b679;
+    color: #32b679;
+}
+
+.success .element-body {
+    background-color: #32b679;
+}
+
+.compared .element-label {
+    border-color: #1b1d1c;
+    color:#1b1d1c;
+}
+
+.compared .element-body {
+    background-color:#1b1d1c;
+}
+
+.custom .element-label {
+    border-color: #0e38b1;
+    color: #0e38b1;
+}
+
+.custom .element-body {
+    background-color: #0e38b1;
+}
+
+.element-label {
+    font-family: 'Fira mono';
+    font-weight: bold;
+    width: 36px;
+    height: 28px;
+    background: #fff;
+    border: 2px solid #d31b33;
+    color: #d31b33;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.element-body {
+    width: 36px;
+    background-color: #d31b33;
+}
+
+.pannel {
+    display: flex;
+    padding-top: 12px;
+}
+
+.default-btn {
+    cursor: pointer;
+    font-family: 'Fira mono', monospace;
+    font-size: 14px;
+    border: none;
+    margin: 3px;
+    outline: none;
+    color: #fff;
+    background-color: #d31b33;
+    padding: 8px 12px;
+    transition: box-shadow 150ms linear;
+}
+
+.default-btn:disabled {
+    opacity: 0.7;
+}
+
+.default-btn:hover {
+    box-shadow: 0 10px 20px -10px #d31b33;
+}
+
+.default-btn:active {
+    background-color: #e32941;
+}
+
+@media screen and (max-width: 730px) {
+    .element {
+        margin: 0 1px;
+    }
+
+    .element-body {
+        width: 19px;
+    }
+
+    .element-label {
+        font-size: 10px;
+        width: 19px;
+        height: 18px;
+        line-height: 16px;
+    }
+}
