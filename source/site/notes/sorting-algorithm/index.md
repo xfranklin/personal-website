@@ -88,7 +88,6 @@ tags: notes
     if (min !== i) {
       // замена местами минимального и еще не отсоритровоного элемента.
       [array[i], array[min]] = [array[min], array[i]]
-      console.log(arr);
     }
   }
 ```
