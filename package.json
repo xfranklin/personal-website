@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf build",
     "prestart": "npm run clean && gulp",
-    "start": "gulp watch & eleventy --serve",
+    "start": "gulp watch & netlify dev",
     "prebuild": "npm run clean",
     "build": "gulp && eleventy"
   },
