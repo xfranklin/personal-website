@@ -19,6 +19,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addNunjucksFilter("sortArticles", sortArticles);
 	return {
 		dir,
-		templateFormats: ['njk', 'md', 'png', 'jpeg' ]
+		templateFormats: ['njk', 'md', 'png', 'jpeg']
 	}
 }
