@@ -19,8 +19,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@netlify/functions": "^5.1.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0"
+    "gulp-clean-css": "^4.2.0",
+    "netlify-cli": "^23.13.5"
   }
 }

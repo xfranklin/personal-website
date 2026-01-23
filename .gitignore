@@ -1,3 +1,17 @@
+# Logs
+pnpm-debug.log*
+
 node_modules
-build   
-package-lock.json
+dist
+_site
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.env
+.DS_Store
+
+# Local Netlify folder
+.netlify
+build
