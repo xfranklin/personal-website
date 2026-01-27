@@ -1,25 +1,40 @@
 {
-  "name": "props-11ty",
+  "name": "personal-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf build",
-    "prestart": "npm run clean && gulp",
-    "start": "gulp watch & netlify dev",
-    "prebuild": "npm run clean",
-    "build": "gulp && eleventy"
+    "packages:install": "pnpm install",
+    "packages:remove": "pnpm dlx rimraf node_modules build",
+    "start": "concurrently -k \"node --import tsx node_modules/@11ty/eleventy/cmd.cjs --serve --watch --config=eleventy.config.ts\" \"pnpm run dev:css\"",
+    "build": "pnpm dlx rimraf build && node --import tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts && pnpm run build:css",
+    "build:css": "mkdir -p build/assets/css && pnpm dlx lightningcss-cli src/site/assets/css/index.css --bundle --minify --targets \">=0.25%\" --output-file build/assets/css/index.css",
+    "dev:css": "mkdir -p build/assets/css && pnpm dlx lightningcss-cli src/site/assets/css/index.css --bundle --watch --output-file build/assets/css/index.css",
+    "format": "prettier --write .",
+    "format:css": "stylelint \"src/**/*.css\" --fix",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:prettier": "prettier --check .",
+    "lint:editorconfig": "editorconfig-checker",
+    "preinstall": "npx only-allow pnpm"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@11ty/eleventy": "^3.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@netlify/functions": "^5.1.2",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.2.0",
-    "netlify-cli": "^23.13.5"
+    "@types/node": "^22.10.7",
+    "concurrently": "^9.1.2",
+    "editorconfig-checker": "^6.1.1",
+    "lightningcss-cli": "^1.31.1",
+    "netlify-cli": "^23.13.5",
+    "prettier": "^3.8.1",
+    "prettier-plugin-jinja-template": "^2.1.0",
+    "stylelint": "^17.0.0",
+    "stylelint-config-recess-order": "^7.6.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^7.0.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.3"
   }
 }
