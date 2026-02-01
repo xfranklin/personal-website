@@ -1,19 +1,15 @@
 <header>
-	<div class="logo">
-		<a href="/"><img src="/assets/images/logo.png" alt="logo"></a>
-	</div>
-	<nav>
-		<ul class="menu">
+  <div class="logo">
+    <a href="/"><img src="/assets/images/logo.png" alt="logo" /></a>
+  </div>
+  <nav>
+    <ul class="menu">
       {% for link in menu.links %}
         {% set isActive = link.url == page.url %}
         <li>
-          <a 
-          {% if isActive %}class="active"{%endif%} 
-          href="{{link.url}}">
-          {{link.label}}
-          </a>
+          <a {% if isActive %}class="active"{% endif %} href="{{ link.url }}"> {{ link.label }} </a>
         </li>
       {% endfor %}
-		</ul>
-	</nav>
+    </ul>
+  </nav>
 </header>

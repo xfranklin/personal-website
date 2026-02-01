@@ -9,6 +9,7 @@ tags: notes
 Vimium — расширение для браузеров, на базе Chromium, существенно расширяющее возможности управления браузером клавиатурой. Команды для управления основаны на текстовом редакторе vim. Ссылки на расширение для [Chrome](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) и [Firefox](https://addons.mozilla.org/ru/firefox/addon/vimium-ff/">Firefox).
 
 ## Все команды
+
 **Навигация на странице:**
 
 <span class="key">j</span>, <span class="key">Ctrl</span> + <span class="key">e</span> - скроллинг вниз\

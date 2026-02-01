@@ -1,0 +1,4 @@
+.husky/
+_redirects
+netlify.toml
+.prettierignore

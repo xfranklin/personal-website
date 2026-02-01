@@ -4,11 +4,11 @@ title: Все Статьи
 description: Сайт Props · Главная страница · Пишу статьи, создаю видео для youtube канала, пишу на JS.
 ---
 
-<div class="publish__header">
-	<h2>Последние публикации 🇺🇦</h2>
+<div class="publish-header">
+  <h2>Последние публикации 🇺🇦</h2>
 </div>
-<ul class="publish__list">
-    {% for post in collections.notes | sortArticles %}
-	<li><a href="{{post.url}}">{{post.data.title}}</a></li>
-    {% endfor %}
+<ul class="publish-list">
+  {% for post in collections.notes | sortArticles %}
+    <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+  {% endfor %}
 </ul>

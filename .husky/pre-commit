@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+staged_files=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -n "$staged_files" ]; then
+  echo "Running editorconfig-checker..."
+  pnpm editorconfig-checker $staged_files || exit 1
+
+  echo "Running prettier lint..."
+  pnpm prettier $staged_files --check --cache || exit 1
+fi
+
+eslint_files=$(echo "$staged_files" | grep -E '\.(js|jsx|ts|tsx)$' || true)
+
+if [ -n "$eslint_files" ]; then
+  echo "Running eslint..."
+  pnpm eslint $eslint_files || exit 1
+fi
+
+stylelint_files=$(echo "$staged_files" | grep -E '\.(css|scss|vue)$' || true)
+
+if [ -n "$stylelint_files" ]; then
+  echo "Running stylelint..."
+  pnpm stylelint $stylelint_files || exit 1
+fi

@@ -1,14 +1,12 @@
 {# {% from "components/header.njk" import header %} #}
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     {% include "components/head.njk" %}
-</head>
-<body>
+  </head>
+  <body>
     {% include "components/header.njk" %}
-	<main>
-        {{ content | safe }}
-	</main>
+    <main>{{ content | safe }}</main>
     {% include "components/footer.njk" %}
-</body>
+  </body>
 </html>

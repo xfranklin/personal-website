@@ -178,7 +178,6 @@ bind-key l select-pane -R
 
 Tmux можно кастомизировать, изменения в основном применяются к статус бару, и цветовой палитре. Вот несколько репозиториев с разными темами: [.tmux](https://github.com/gpakosz/.tmux), [nord-tmux](https://github.com/arcticicestudio/nord-tmux), [tmux-themepack](https://github.com/jimeh/tmux-themepack).
 
-
 ## Видео
 
 Вы так же можете посмотреть моё видео по tmux на youtube [ссылка](https://www.youtube.com/watch?v=jNxjN4P_-xc)

@@ -12,13 +12,6 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true
   },
-  "include": [
-    "eleventy.config.ts",
-    "11ty/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "src/site/assets/js"
-  ]
+  "include": ["eleventy.config.ts", "11ty/**/*.ts"],
+  "exclude": ["node_modules", "build", "src/site/assets/js"]
 }

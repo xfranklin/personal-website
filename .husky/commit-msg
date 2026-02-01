@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+echo "Running commitlint...";
+pnpm dlx commitlint --edit $1
