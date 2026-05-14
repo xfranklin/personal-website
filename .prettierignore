@@ -2,3 +2,4 @@
 _redirects
 netlify.toml
 .prettierignore
+movies.csv
