@@ -1,12 +1,13 @@
 ---
 layout: layouts/article
+locale: ru
 title: Визуализация алгоритмов сортировки [дополняется]
 description: Визуализация алгоритмов сортировки.
 date: 2020-07-05
 post:
   url: assets/sort.png
   alt: Алгоритмы сортрировки
-tags: notes
+tags: archive
 ---
 
 <div id="app">

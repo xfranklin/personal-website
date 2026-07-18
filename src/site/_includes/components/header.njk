@@ -1,15 +1,78 @@
-<header>
-  <div class="logo">
-    <a href="/"><img src="/assets/images/logo.png" alt="logo" /></a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="logo">
+      <a href="/" aria-label="Daniil Feleniuk">Daniil Feleniuk</a>
+    </div>
+    {% if locale == "ru" %}
+      {% set homeUrl = "/ru/" %}
+      {% set aboutUrl = "/ru/about-me/" %}
+    {% elif locale == "en" %}
+      {% set homeUrl = "/en/" %}
+      {% set aboutUrl = "/en/about-me/" %}
+    {% else %}
+      {% set homeUrl = "/" %}
+      {% set aboutUrl = "/about-me/" %}
+    {% endif %}
+    {% set isAboutPage = "/about-me/" in page.url %}
+    {% if isAboutPage %}
+      {% set ukLanguageUrl = "/about-me/" %}
+      {% set ruLanguageUrl = "/ru/about-me/" %}
+      {% set enLanguageUrl = "/en/about-me/" %}
+    {% else %}
+      {% set ukLanguageUrl = "/" %}
+      {% set ruLanguageUrl = "/ru/" %}
+      {% set enLanguageUrl = "/en/" %}
+    {% endif %}
+    <div class="header-tools">
+      <nav aria-label="{{ 'NAV_HOME' | i18n({}, locale) }}">
+        <ul class="menu">
+          <li>
+            <a
+              {% if page.url == homeUrl %}class="active" aria-current="page"{% endif %}
+              href="{{ homeUrl }}"
+            >
+              {{ 'NAV_HOME' | i18n({}, locale) }}
+            </a>
+          </li>
+          <li>
+            <a
+              {% if "/archive/" in page.url %}class="active" aria-current="page"{% endif %}
+              href="/archive/"
+              >{{ 'NAV_ARCHIVE' | i18n({}, locale) }}</a
+            >
+          </li>
+          <li>
+            <a
+              {% if page.url == aboutUrl %}class="active" aria-current="page"{% endif %}
+              href="{{ aboutUrl }}"
+            >
+              {{ 'NAV_ABOUT' | i18n({}, locale) }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="language-switcher" aria-label="{{ 'LANGUAGE_SWITCHER' | i18n({}, locale) }}">
+        <a {% if locale == "uk" %}aria-current="true"{% endif %} href="{{ ukLanguageUrl }}"
+          >{{ 'LANG_UK' | i18n({}, locale) }}</a
+        >
+        <a {% if locale == "ru" %}aria-current="true"{% endif %} href="{{ ruLanguageUrl }}"
+          >{{ 'LANG_RU' | i18n({}, locale) }}</a
+        >
+        <a {% if locale == "en" %}aria-current="true"{% endif %} href="{{ enLanguageUrl }}"
+          >{{ 'LANG_EN' | i18n({}, locale) }}</a
+        >
+      </nav>
+      <button
+        class="theme-toggle"
+        type="button"
+        data-theme-toggle
+        data-theme-dark-label="{{ 'THEME_DARK' | i18n({}, locale) }}"
+        data-theme-light-label="{{ 'THEME_LIGHT' | i18n({}, locale) }}"
+        aria-label="{{ 'THEME_DARK' | i18n({}, locale) }}"
+        aria-pressed="false"
+      >
+        <span aria-hidden="true" data-theme-toggle-icon>◐</span>
+      </button>
+    </div>
   </div>
-  <nav>
-    <ul class="menu">
-      {% for link in menu.links %}
-        {% set isActive = link.url == page.url %}
-        <li>
-          <a {% if isActive %}class="active"{% endif %} href="{{ link.url }}"> {{ link.label }} </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
 </header>

@@ -1,0 +1,30 @@
+<section class="about-page" aria-labelledby="about-title">
+  <aside class="about-sidebar">
+    <div class="about-profile">
+      <img src="/assets/images/me.webp" alt="{{ 'ABOUT_TITLE' | i18n({}, locale) }}" />
+    </div>
+
+    <section class="about-contacts" aria-labelledby="contacts-title">
+      <h2 id="contacts-title">{{ 'ABOUT_CONTACTS' | i18n({}, locale) }}</h2>
+      <ul>
+        <li><a href="mailto:xanmean@gmail.com">xanmean@gmail.com</a></li>
+        <li><a href="/assets/resume.pdf">{{ 'ABOUT_RESUME' | i18n({}, locale) }}</a></li>
+      </ul>
+    </section>
+  </aside>
+
+  <div class="about-content">
+    <header class="about-header">
+      <h1 id="about-title">{{ 'ABOUT_TITLE' | i18n({}, locale) }}</h1>
+      <p class="about-lede">
+        {{ 'ABOUT_GREETING' | i18n({}, locale) }}
+        <del>{{ 'ABOUT_CITY_OLD' | i18n({}, locale) }}</del>
+        {{ 'ABOUT_CITY_NEW' | i18n({}, locale) }}. {{ 'ABOUT_ROLE' | i18n({}, locale) }}.
+        {{ 'ABOUT_WORKED' | i18n({}, locale) }} <a href="https://www.keepsolid.com/">KeepSolid</a> →
+        <del>NEMESIS</del> → <a href="https://www.upstars.com/">UPSTARS</a>.
+        {{ 'ABOUT_INTERESTS' | i18n({}, locale) }}
+        <del>{{ 'ABOUT_VIDEO' | i18n({}, locale) }}</del>.
+      </p>
+    </header>
+  </div>
+</section>

@@ -1,9 +1,10 @@
 ---
 layout: layouts/article
+locale: ru
 title: Основы работы в Tmux, конфигурация, кастомизация
 description: Обзор Zsh Oh my zsh настройка, основы работы, установка тем и плагинов.
 date: 2019-02-08
-tags: notes
+tags: archive
 ---
 
 Tmux - мультиплексор, позволяющий запускать несколько терминалов в одном окне, доступен для всех unix-подобный систем (Linux, macOS, BSD).

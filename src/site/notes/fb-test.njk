@@ -1,8 +1,19 @@
-<a
-  href="https://www.facebook.com/v3.2/dialog/oauth?client_id=209599977796178&redirect_uri=https://dev-props.com/notes/fb-test/"
-  >fb</a
->
-<a
-  href="https://accounts.google.com/o/oauth2/v2/auth?client_id=489935238044-gitelghpsd3sr1d5acrve6bc6bkarbk9&response_type=code&state=email&scope=openid%20profile%20email&redirect_uri=https://dev-props.com/notes/fb-test/"
-  >g+</a
->
+---
+layout: layouts/base
+title: OAuth тест
+description: Техническая страница OAuth-теста
+locale: ru
+---
+
+<section class="utility-page" aria-labelledby="oauth-title">
+  <p class="eyebrow">Техническая страница</p>
+  <h1 id="oauth-title">OAuth тест</h1>
+  <a
+    href="https://www.facebook.com/v3.2/dialog/oauth?client_id=209599977796178&redirect_uri={{ site.url }}/notes/fb-test/"
+    >fb</a
+  >
+  <a
+    href="https://accounts.google.com/o/oauth2/v2/auth?client_id=489935238044-gitelghpsd3sr1d5acrve6bc6bkarbk9&response_type=code&state=email&scope=openid%20profile%20email&redirect_uri={{ site.url }}/notes/fb-test/"
+    >g+</a
+  >
+</section>

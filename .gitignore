@@ -1,6 +1,7 @@
 # Logs
 pnpm-debug.log*
 
+.pnpm-store
 node_modules
 dist
 _site

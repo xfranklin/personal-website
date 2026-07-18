@@ -1,0 +1,30 @@
+---
+layout: layouts/base
+title: Архив статей
+description: Хронологический архив статей Даниила Феленюка о веб-разработке, дизайне и инструментах.
+locale: ru
+---
+
+<section class="publication-page archive-page" aria-labelledby="archive-title">
+  <header class="publication-header">
+    <h1 id="archive-title">Архив статей</h1>
+    <p>Хронологический список всех опубликованных материалов, заметок и исследований.</p>
+  </header>
+
+  <div class="publication-list archive-list">
+    {% set currentYear = "" %}
+    {% for post in collections.archive | sortArticles %}
+      {% set postYear = post.date | getYear %}
+      {% if postYear != currentYear %}
+        {% set currentYear = postYear %}
+        <h2 class="archive-year">{{ currentYear }}</h2>
+      {% endif %}
+      <article class="publication-entry">
+        <div>
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        </div>
+        <time datetime="{{ post.date | dateToIsoString }}">{{ post.date | formatDate }}</time>
+      </article>
+    {% endfor %}
+  </div>
+</section>

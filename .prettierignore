@@ -1,5 +1,8 @@
 .husky/
 _redirects
+.pnpm-store
 netlify.toml
 .prettierignore
+.gitignore
 movies.csv
+src/site/assets/images/me.webp

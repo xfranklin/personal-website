@@ -1,9 +1,10 @@
 ---
 layout: layouts/article
+locale: ru
 title: Обзор zsh, oh-my-zsh, настройка и установка тем и плагинов
 description: Обзор Zsh Oh my zsh настройка, основы работы, установка тем и плагинов.
 date: 2019-02-27
-tags: notes
+tags: archive
 ---
 
 Zsh - командная оболочка unix, вместе с zsh часто устанавливают фреймворк oh-my-zsh. Он предлагает следующие крутые возможности:

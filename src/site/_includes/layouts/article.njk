@@ -2,11 +2,13 @@
 layout: layouts/base
 ---
 
-<div class="article-header">
-  <time>{{ date | formatDate }}</time>
-  <h1>{{ title }}</h1>
-  {% if post %}
-    <img src="{{ post.url }}" alt="{{ post.alt }}" />
-  {% endif %}
-</div>
-{{ content | safe }}
+<article class="article">
+  <header class="article-header">
+    <time datetime="{{ date | dateToIsoString }}">{{ date | formatDate }}</time>
+    <h1>{{ title }}</h1>
+    {% if post %}
+      <img src="{{ post.url }}" alt="{{ post.alt }}" />
+    {% endif %}
+  </header>
+  <div class="article-body">{{ content | safe }}</div>
+</article>

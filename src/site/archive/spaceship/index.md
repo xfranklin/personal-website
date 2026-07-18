@@ -1,12 +1,13 @@
 ---
 layout: layouts/article
+locale: ru
 title: Spaceship ZSH обзор и конфигурация лучшей командной оболочки
 description: Обзор Zsh Oh my zsh настройка, основы работы, установка тем и плагинов.
 date: 2019-07-07
 post:
   url: assets/zsh-spaceship.png
   alt: Spaceship screenshot
-tags: notes
+tags: archive
 ---
 
 [Spaceship](https://github.com/denysdovhan/spaceship-prompt) позиционирует себя как минималистичная, мощная и кастомизируемая командная оболочка zsh (так оно и есть). Далее перечислены основные возможности:

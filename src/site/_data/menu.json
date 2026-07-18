@@ -2,7 +2,11 @@
   "links": [
     {
       "url": "/",
-      "label": "Статьи"
+      "label": "Главная"
+    },
+    {
+      "url": "/archive/",
+      "label": "Архив"
     },
     {
       "url": "/about-me/",

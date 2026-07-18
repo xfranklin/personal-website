@@ -1,9 +1,10 @@
 ---
 layout: layouts/article
+locale: ru
 title: Vimium шпаргалка
 description: Vimium — расширение для браузеров, на базе Chromium, существенно расширяющее возможности управления браузером клавиатурой. Команды для управления основаны на текстовом редакторе vim.
 date: 2019-08-10
-tags: notes
+tags: archive
 ---
 
 Vimium — расширение для браузеров, на базе Chromium, существенно расширяющее возможности управления браузером клавиатурой. Команды для управления основаны на текстовом редакторе vim. Ссылки на расширение для [Chrome](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb) и [Firefox](https://addons.mozilla.org/ru/firefox/addon/vimium-ff/">Firefox).
