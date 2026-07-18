@@ -4,4 +4,4 @@ layout: null
 eleventyExcludeFromCollections: true
 ---
 
-{%- sitemap collections.sitemap -%}
+{{- collections.sitemap | renderSitemap(site.url) | safe -}}

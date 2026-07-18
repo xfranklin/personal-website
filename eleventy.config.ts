@@ -1,10 +1,10 @@
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import i18n from "eleventy-plugin-i18n";
-import sitemap from "@quasibit/eleventy-plugin-sitemap";
 import { dateToIsoString } from "./11ty/filters/date-to-iso-string.ts";
 import { formatDate } from "./11ty/filters/format-date.ts";
 import { getYear } from "./11ty/filters/get-year.ts";
 import { sortArticles } from "./11ty/filters/sort-articles.ts";
+import { renderSitemap } from "./11ty/render-sitemap.ts";
 import en from "./src/site/_data/locales/en.json";
 import ru from "./src/site/_data/locales/ru.json";
 import site from "./src/site/_data/site.json";
@@ -31,47 +31,11 @@ export default function (eleventyConfig: any) {
     translations,
     fallbackLocales: { "*": "uk" }
   });
-  eleventyConfig.addPlugin(sitemap, {
-    sitemap: {
-      hostname: site.url
-    }
-  });
-  eleventyConfig.addTransform("formatSitemapXml", (content: string, outputPath?: string) => {
-    if (!outputPath?.endsWith("/sitemap.xml")) {
-      return content;
-    }
-
-    return `${content.trim().replace(/></g, ">\n<")}\n`;
-  });
   eleventyConfig.addCollection("sitemap", (collectionApi: any) => {
-    const items = collectionApi
+    return collectionApi
       .getAll()
-      .filter((item: any) => item.url && !item.data.sitemap?.ignore);
-
-    return items.map((item: any) => {
-      const translations = item.data.translationKey
-        ? items.filter((other: any) => other.data.translationKey === item.data.translationKey)
-        : [];
-
-      return {
-        url: item.url,
-        date: item.date,
-        data: {
-          ...item.data,
-          sitemap: {
-            ...item.data.sitemap,
-            ...(translations.length
-              ? {
-                  links: translations.map((translation: any) => ({
-                    lang: translation.data.locale,
-                    url: translation.url
-                  }))
-                }
-              : {})
-          }
-        }
-      };
-    });
+      .filter((item: any) => item.url && !item.data.sitemap?.ignore)
+      .map((item: any) => ({ date: item.date, url: item.url }));
   });
   eleventyConfig.addCollection("newPublications", (collectionApi: any) =>
     collectionApi.getAll().filter((item: any) => {
@@ -97,6 +61,7 @@ export default function (eleventyConfig: any) {
   eleventyConfig.addNunjucksFilter("formatDate", formatDate);
   eleventyConfig.addNunjucksFilter("getYear", getYear);
   eleventyConfig.addNunjucksFilter("sortArticles", sortArticles);
+  eleventyConfig.addNunjucksFilter("renderSitemap", renderSitemap);
 
   return {
     dir: {
