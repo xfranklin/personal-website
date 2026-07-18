@@ -6,3 +6,4 @@ netlify.toml
 .gitignore
 movies.csv
 src/site/assets/images/me.webp
+src/site/assets/images/fav.svg

@@ -4,6 +4,9 @@
     {% include "components/head.njk" %}
   </head>
   <body>
+    <a class="ukraine-banner" href="https://u24.gov.ua/" target="_blank" rel="noreferrer">
+      <span>{{ 'UKRAINE_BANNER' | i18n({}, locale) }}</span>
+    </a>
     {% include "components/header.njk" %}
     <main id="main-content" class="site-main">{{ content | safe }}</main>
     {% include "components/footer.njk" %}
