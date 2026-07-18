@@ -34,6 +34,13 @@ export default function (eleventyConfig: any) {
       hostname: site.url
     }
   });
+  eleventyConfig.addTransform("formatSitemapXml", (content: string, outputPath?: string) => {
+    if (!outputPath?.endsWith("/sitemap.xml")) {
+      return content;
+    }
+
+    return `${content.trim().replace(/></g, ">\n<")}\n`;
+  });
   eleventyConfig.addCollection("sitemap", (collectionApi: any) => {
     const items = collectionApi
       .getAll()
