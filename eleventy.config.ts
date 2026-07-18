@@ -11,6 +11,7 @@ import site from "./src/site/_data/site.json";
 import uk from "./src/site/_data/locales/uk.json";
 
 const locales = { en, ru, uk };
+const assetVersion = Date.now();
 const translations = Object.fromEntries(
   Object.keys(uk).map((key) => [
     key,
@@ -24,6 +25,7 @@ const translations = Object.fromEntries(
 );
 
 export default function (eleventyConfig: any) {
+  eleventyConfig.addGlobalData("assetVersion", assetVersion);
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(i18n, {
     translations,
