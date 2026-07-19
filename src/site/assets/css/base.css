@@ -457,6 +457,227 @@ time {
   border-bottom: 1px solid var(--color-text);
 }
 
+.collection-page {
+  width: min(100%, var(--shell-width));
+  padding: clamp(68px, 10vw, 116px) 0 72px;
+  margin: 0 auto;
+}
+
+.collection-header {
+  max-width: var(--content-width);
+  margin-bottom: 40px;
+}
+
+.collection-tabs {
+  display: flex;
+  gap: 24px;
+  margin-top: 28px;
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.collection-tabs a {
+  position: relative;
+  padding: 0 2px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+}
+
+.collection-tabs a::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  content: "";
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transition: transform 150ms ease;
+}
+
+.collection-tabs a:hover::after,
+.collection-tabs a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.collection-tabs a:hover,
+.collection-tabs a[aria-current="page"] {
+  color: var(--color-text);
+  background: transparent;
+}
+
+.collection-placeholder {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.collection-placeholder-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  padding: clamp(28px, 5vw, 54px);
+}
+
+.collection-placeholder-copy p {
+  max-width: 30ch;
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.45;
+}
+
+.collection-placeholder-copy span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.collection-placeholder img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 400px));
+  gap: clamp(28px, 4vw, 52px);
+  justify-content: start;
+  max-width: var(--shell-width);
+}
+
+.collection-year-group + .collection-year-group {
+  margin-top: 64px;
+}
+
+.collection-year {
+  padding: 8px 0 8px 16px;
+  margin: 0 0 24px;
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, calc(2.6vw - 0.25rem), 1.5rem);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: 0;
+  border-left: 8px solid var(--color-accent);
+}
+
+.movie-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 400px;
+}
+
+.movie-poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition:
+    filter 220ms ease,
+    transform 220ms ease;
+}
+
+.movie-card:hover .movie-poster img,
+.movie-card:focus-within .movie-poster img {
+  filter: grayscale(0);
+  transform: scale(1.02);
+}
+
+.movie-rating {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111;
+  background: #fff;
+  border: 1px solid #111;
+}
+
+.rating-star {
+  font-size: 1.25rem;
+  line-height: 0;
+  vertical-align: -0.08em;
+}
+
+.movie-card-heading {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 16px 0 6px;
+}
+
+.movie-title {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  min-width: 0;
+}
+
+.movie-card h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+}
+
+.movie-imdb-link {
+  flex: 0 0 auto;
+  padding: 0 2px;
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.movie-imdb-link:hover {
+  background: transparent;
+  transform: translate(2px, -2px);
+}
+
+.movie-card time {
+  flex: 0 0 auto;
+}
+
+.movie-card p {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.movie-card .collection-date {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-subtle);
+}
+
+.collection-date time {
+  color: var(--color-muted);
+}
+
 .publish-header {
   padding: clamp(72px, 11vw, 120px) 0 42px;
   border-bottom: 1px solid var(--color-text);
@@ -838,6 +1059,27 @@ pre code {
 
   .publication-page {
     padding-top: 72px;
+  }
+
+  .collection-page {
+    padding-top: 72px;
+  }
+
+  .collection-placeholder {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-placeholder-copy {
+    min-height: 220px;
+  }
+
+  .collection-placeholder img {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
   }
 
   .publish-list a {

@@ -14,7 +14,12 @@
       {% set aboutUrl = "/about-me/" %}
     {% endif %}
     {% set isAboutPage = "/about-me/" in page.url %}
-    {% if isAboutPage %}
+    {% set isCollectionPage = "/collection/" in page.url %}
+    {% if isCollectionPage %}
+      {% set ukLanguageUrl = page.url %}
+      {% set ruLanguageUrl = page.url %}
+      {% set enLanguageUrl = page.url %}
+    {% elif isAboutPage %}
       {% set ukLanguageUrl = "/about-me/" %}
       {% set ruLanguageUrl = "/ru/about-me/" %}
       {% set enLanguageUrl = "/en/about-me/" %}
@@ -39,6 +44,13 @@
               {% if "/archive/" in page.url %}class="active" aria-current="page"{% endif %}
               href="/archive/"
               >{{ 'NAV_ARCHIVE' | i18n({}, locale) }}</a
+            >
+          </li>
+          <li>
+            <a
+              {% if "/collection/" in page.url %}class="active" aria-current="page"{% endif %}
+              href="/collection/movies/"
+              >{{ 'NAV_COLLECTION' | i18n({}, locale) }}</a
             >
           </li>
           <li>

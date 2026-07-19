@@ -3,6 +3,7 @@ import i18n from "eleventy-plugin-i18n";
 import { dateToIsoString } from "./11ty/filters/date-to-iso-string.ts";
 import { formatDate } from "./11ty/filters/format-date.ts";
 import { getYear } from "./11ty/filters/get-year.ts";
+import { groupMoviesByWatchedYear } from "./11ty/filters/group-movies-by-watched-year.ts";
 import { sortArticles } from "./11ty/filters/sort-articles.ts";
 import { renderSitemap } from "./11ty/render-sitemap.ts";
 import en from "./src/site/_data/locales/en.json";
@@ -60,6 +61,7 @@ export default function (eleventyConfig: any) {
   eleventyConfig.addNunjucksFilter("dateToIsoString", dateToIsoString);
   eleventyConfig.addNunjucksFilter("formatDate", formatDate);
   eleventyConfig.addNunjucksFilter("getYear", getYear);
+  eleventyConfig.addNunjucksFilter("groupMoviesByWatchedYear", groupMoviesByWatchedYear);
   eleventyConfig.addNunjucksFilter("sortArticles", sortArticles);
   eleventyConfig.addNunjucksFilter("renderSitemap", renderSitemap);
 
