@@ -356,6 +356,10 @@ time {
   margin: 0 auto;
 }
 
+.site-main:has(.collection-page) {
+  width: min(100%, calc(1376px + (var(--page-gutter) * 2)));
+}
+
 .home-page,
 .utility-page {
   width: min(100%, var(--content-width));
@@ -458,7 +462,7 @@ time {
 }
 
 .collection-page {
-  width: min(100%, var(--shell-width));
+  width: min(100%, 1376px);
   padding: clamp(68px, 10vw, 116px) 0 72px;
   margin: 0 auto;
 }
@@ -550,10 +554,10 @@ time {
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 400px));
-  gap: clamp(28px, 4vw, 52px);
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 320px));
+  gap: 32px;
   justify-content: start;
-  max-width: var(--shell-width);
+  max-width: 1376px;
 }
 
 .collection-year-group + .collection-year-group {
@@ -574,7 +578,7 @@ time {
 .movie-card {
   width: 100%;
   min-width: 0;
-  max-width: 400px;
+  max-width: 320px;
 }
 
 .movie-poster {
@@ -1079,7 +1083,7 @@ pre code {
   }
 
   .movie-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(min(320px, 100%), 320px);
   }
 
   .publish-list a {
