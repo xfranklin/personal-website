@@ -6,19 +6,26 @@
     {% if locale == "ru" %}
       {% set homeUrl = "/ru/" %}
       {% set aboutUrl = "/ru/about-me/" %}
+      {% set collectionUrl = "/ru/collection/movies/" %}
     {% elif locale == "en" %}
       {% set homeUrl = "/en/" %}
       {% set aboutUrl = "/en/about-me/" %}
+      {% set collectionUrl = "/en/collection/movies/" %}
     {% else %}
       {% set homeUrl = "/" %}
       {% set aboutUrl = "/about-me/" %}
+      {% set collectionUrl = "/collection/movies/" %}
     {% endif %}
     {% set isAboutPage = "/about-me/" in page.url %}
     {% set isCollectionPage = "/collection/" in page.url %}
-    {% if isCollectionPage %}
-      {% set ukLanguageUrl = page.url %}
-      {% set ruLanguageUrl = page.url %}
-      {% set enLanguageUrl = page.url %}
+    {% if "/collection/movies/" in page.url %}
+      {% set ukLanguageUrl = "/collection/movies/" %}
+      {% set ruLanguageUrl = "/ru/collection/movies/" %}
+      {% set enLanguageUrl = "/en/collection/movies/" %}
+    {% elif "/collection/books/" in page.url %}
+      {% set ukLanguageUrl = "/collection/books/" %}
+      {% set ruLanguageUrl = "/ru/collection/books/" %}
+      {% set enLanguageUrl = "/en/collection/books/" %}
     {% elif isAboutPage %}
       {% set ukLanguageUrl = "/about-me/" %}
       {% set ruLanguageUrl = "/ru/about-me/" %}
@@ -49,7 +56,7 @@
           <li>
             <a
               {% if "/collection/" in page.url %}class="active" aria-current="page"{% endif %}
-              href="/collection/movies/"
+              href="{{ collectionUrl }}"
               >{{ 'NAV_COLLECTION' | i18n({}, locale) }}</a
             >
           </li>

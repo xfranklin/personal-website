@@ -1,13 +1,21 @@
 <section class="collection-page" aria-labelledby="collection-title">
   <header class="collection-header">
     <h1 id="collection-title">{{ 'COLLECTION_TITLE' | i18n({}, locale) }}</h1>
+    {% if locale == "ru" %}
+      {% set moviesUrl = "/ru/collection/movies/" %}
+      {% set booksUrl = "/ru/collection/books/" %}
+    {% elif locale == "en" %}
+      {% set moviesUrl = "/en/collection/movies/" %}
+      {% set booksUrl = "/en/collection/books/" %}
+    {% else %}
+      {% set moviesUrl = "/collection/movies/" %}
+      {% set booksUrl = "/collection/books/" %}
+    {% endif %}
     <nav class="collection-tabs" aria-label="{{ 'COLLECTION_TITLE' | i18n({}, locale) }}">
-      <a
-        {% if collectionType == "movies" %}aria-current="page"{% endif %}
-        href="/collection/movies/"
+      <a {% if collectionType == "movies" %}aria-current="page"{% endif %} href="{{ moviesUrl }}"
         >{{ 'COLLECTION_MOVIES' | i18n({}, locale) }}</a
       >
-      <a {% if collectionType == "books" %}aria-current="page"{% endif %} href="/collection/books/"
+      <a {% if collectionType == "books" %}aria-current="page"{% endif %} href="{{ booksUrl }}"
         >{{ 'COLLECTION_BOOKS' | i18n({}, locale) }}</a
       >
     </nav>
@@ -57,7 +65,7 @@
                 </div>
                 <time datetime="{{ movie.year }}">{{ movie.year }}</time>
               </div>
-              {% if movie.description %}<p>{{ movie.description }}</p>{% endif %}
+              {% if movie.description %}<p>{{ movie.description | i18n({}, locale) }}</p>{% endif %}
               {% if movie.watchedDate %}
                 <p class="collection-date">
                   <time datetime="{{ movie.watchedDate }}">{{ movie.watchedDisplay }}</time>
