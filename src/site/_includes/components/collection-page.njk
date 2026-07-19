@@ -23,6 +23,7 @@
       <section class="collection-year-group" aria-labelledby="{{ groupHeadingId }}">
         <h2 id="{{ groupHeadingId }}" class="collection-year">
           {% if group.year %}{{ group.year }}{% else %}{{ 'COLLECTION_NO_WATCHED_YEAR' | i18n({}, locale) }}{% endif %}
+          <span class="collection-year-count">[{{ group.movies | length }}]</span>
         </h2>
         <div class="movie-grid">
           {% for movie in group.movies %}
@@ -69,7 +70,9 @@
     {% endfor %}
   {% elif collectionType == "books" %}
     <section class="collection-year-group" aria-labelledby="collection-year-2020">
-      <h2 id="collection-year-2020" class="collection-year">2020</h2>
+      <h2 id="collection-year-2020" class="collection-year">
+        2020 <span class="collection-year-count">[2]</span>
+      </h2>
       <div class="movie-grid">
         <article class="movie-card">
           <div class="movie-poster">
