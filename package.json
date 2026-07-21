@@ -6,6 +6,8 @@
   "scripts": {
     "packages:install": "pnpm install",
     "packages:remove": "pnpm dlx rimraf node_modules build",
+    "book:add": "node book.js",
+    "movie:add": "node movie.js",
     "start": "pnpm run build:css && node --import tsx node_modules/@11ty/eleventy/cmd.cjs --serve --watch --config=eleventy.config.ts",
     "build": "rimraf build && node --import tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts && pnpm run build:css",
     "build:css": "mkdir -p build/assets/css && lightningcss src/site/assets/css/index.css --bundle --minify --targets \">=0.25%\" --output-file build/assets/css/index.css",

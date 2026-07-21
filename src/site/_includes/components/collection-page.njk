@@ -77,40 +77,50 @@
       </section>
     {% endfor %}
   {% elif collectionType == "books" %}
-    <section class="collection-year-group" aria-labelledby="collection-year-2020">
-      <h2 id="collection-year-2020" class="collection-year">
-        2020 <span class="collection-year-count">[2]</span>
-      </h2>
-      <div class="movie-grid">
-        <article class="movie-card">
-          <div class="movie-poster">
-            <span class="movie-rating" aria-label="Rating 9.0 out of 10"
-              ><span class="rating-star" aria-hidden="true">★</span> 9.0 / 10</span
-            >
-          </div>
-          <div class="movie-card-heading">
-            <h3>Stoner</h3>
-            <time datetime="1965">1965</time>
-          </div>
-          <p>{{ 'COLLECTION_BOOK_ONE_TEXT' | i18n({}, locale) }}</p>
-          <p class="collection-date"><time datetime="2020-04-16">16.04</time></p>
-        </article>
-
-        <article class="movie-card">
-          <div class="movie-poster">
-            <span class="movie-rating" aria-label="Rating 8.7 out of 10"
-              ><span class="rating-star" aria-hidden="true">★</span> 8.7 / 10</span
-            >
-          </div>
-          <div class="movie-card-heading">
-            <h3>Pachinko</h3>
-            <time datetime="2017">2017</time>
-          </div>
-          <p>{{ 'COLLECTION_BOOK_TWO_TEXT' | i18n({}, locale) }}</p>
-          <p class="collection-date"><time datetime="2020-09-07">07.09</time></p>
-        </article>
-      </div>
-    </section>
+    {% for group in books | groupBooksByReadYear %}
+      {% if group.year %}
+        {% set groupHeadingId = "collection-year-" + group.year %}
+      {% else %}
+        {% set groupHeadingId = "collection-year-undated" %}
+      {% endif %}
+      <section class="collection-year-group" aria-labelledby="{{ groupHeadingId }}">
+        <h2 id="{{ groupHeadingId }}" class="collection-year">
+          {% if group.year %}{{ group.year }}{% else %}{{ 'COLLECTION_NO_WATCHED_YEAR' | i18n({}, locale) }}{% endif %}
+          <span class="collection-year-count">[{{ group.books | length }}]</span>
+        </h2>
+        <div class="movie-grid">
+          {% for book in group.books %}
+            <article class="movie-card">
+              <div class="movie-poster">
+                <img
+                  src="{{ book.poster }}"
+                  alt="{{ book.title }}"
+                  width="380"
+                  height="562"
+                  loading="lazy"
+                />
+                {% if book.rating %}
+                  <span class="movie-rating" aria-label="Rating {{ book.rating }} out of 10"
+                    ><span class="rating-star" aria-hidden="true">★</span> {{ book.rating }} /
+                    10</span
+                  >
+                {% endif %}
+              </div>
+              <div class="movie-card-heading">
+                <h3>{{ book.title }}</h3>
+                <time datetime="{{ book.year }}">{{ book.year }}</time>
+              </div>
+              {% if book.description %}<p>{{ book.description | i18n({}, locale) }}</p>{% endif %}
+              {% if book.readDate %}
+                <p class="collection-date">
+                  <time datetime="{{ book.readDate }}">{{ book.readDisplay }}</time>
+                </p>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
   {% else %}
     <article class="collection-placeholder">
       <div class="collection-placeholder-copy">

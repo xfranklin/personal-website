@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Война и наказание: Как Россия уничтожала Украину",
+    "description": "BOOK_AND_PUNICHMENT",
+    "year": 2025,
+    "read": "15.07.2026",
+    "rating": 7,
+    "poster": "/assets/images/books/war_and_punishment.webp"
+  },
+  {
+    "title": "1984",
+    "description": "BOOK_1984",
+    "year": 1949,
+    "read": "21.07.2026",
+    "rating": 9,
+    "poster": "/assets/images/books/1984.webp"
+  }
+]

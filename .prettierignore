@@ -5,5 +5,5 @@ netlify.toml
 .prettierignore
 .gitignore
 movies.csv
-src/site/assets/images/me.webp
+*.webp
 src/site/assets/images/fav.svg
