@@ -1,8 +1,8 @@
 ---
 layout: layouts/article
 locale: ru
-title: Подключение reCaptcha v3 и v2 (невидимая и чекбокс) на сайт
-description: Гайд по подключению reCaptcha v3 и v2.
+title: "Как подключить Google reCAPTCHA v3 и v2 на сайт"
+description: "Пошаговый гайд по подключению Google reCAPTCHA v3 и v2: невидимой защиты и варианта с чекбоксом."
 date: 2021-01-16
 post:
   url: assets/recaptcha-logo.png

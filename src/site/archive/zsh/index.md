@@ -1,8 +1,8 @@
 ---
 layout: layouts/article
 locale: ru
-title: Обзор zsh, oh-my-zsh, настройка и установка тем и плагинов
-description: Обзор Zsh Oh my zsh настройка, основы работы, установка тем и плагинов.
+title: "Zsh и Oh My Zsh: установка, настройка тем и плагинов"
+description: "Практическое руководство по Zsh и Oh My Zsh: установка, основные команды, настройка тем и подключение плагинов."
 date: 2019-02-27
 tags: archive
 ---

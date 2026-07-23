@@ -1,11 +1,18 @@
 <meta charset="UTF-8" />
 
-<title>{{ title }}{% if title %}·{% endif %}Даниил Феленюк</title>
+{% if locale == "uk" %}
+  {% set siteTitle = "Данило Феленюк" %}
+{% elif locale == "en" %}
+  {% set siteTitle = "Daniil Feleniuk" %}
+{% else %}
+  {% set siteTitle = "Даниил Феленюк" %}
+{% endif %}
+<title>{{ title }}{% if title %}·{% endif %}{{ siteTitle }}</title>
 <meta name="description" content="{{ description }}" />
 <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="{{ title }}{% if title %}·{% endif %}Даниил Феленюк" />
+<meta property="og:title" content="{{ title }}{% if title %}·{% endif %}{{ siteTitle }}" />
 <meta property="og:description" content="{{ description }}" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />

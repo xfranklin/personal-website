@@ -1,8 +1,8 @@
 ---
 layout: layouts/article
 locale: ru
-title: Spaceship ZSH обзор и конфигурация лучшей командной оболочки
-description: Обзор Zsh Oh my zsh настройка, основы работы, установка тем и плагинов.
+title: "Spaceship ZSH: обзор и настройка prompt-темы"
+description: "Обзор темы Spaceship ZSH: установка, настройка prompt и полезные возможности для командной строки."
 date: 2019-07-07
 post:
   url: assets/zsh-spaceship.png
